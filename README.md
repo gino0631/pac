@@ -79,7 +79,7 @@ Other optional parameters allow to further define the properties of the package:
 ```
 
 Refer to [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html#_options_and_directives) and
-[makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html) manual pages for information about their meanings and possible values.
+[makepkg.conf(5)](https://www.archlinux.org/pacman/makepkg.conf.5.html#_options) manual pages for information about their meanings and possible values.
 
 By default, all installed files and directories will have `0644` and `0755` permissions set accordingly. To change this, use `permissionSets`, for example:
 ```xml
