@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.gino0631</groupId>
+  <artifactId>pac-maven-plugin-test</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>PAC Maven Plugin Test</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.gino0631</groupId>
+        <artifactId>pac-maven-plugin</artifactId>
+        <configuration>
+          <root>${basedir}/root</root>
+          <entries>
+            <symlink>
+              <name>/opt/pac-test/run2.sh</name>
+              <linkTo>/opt/pac-test/run.sh</linkTo>
+            </symlink>
+          </entries>
+          <installScript>${basedir}/../install</installScript>
+          <url>http://test.com/</url>
+          <packager>John Doe &lt;john@example.com&gt;</packager>
+          <licenses>
+            <license>GPL</license>
+          </licenses>
+          <depends>
+            <depend>bash</depend>
+          </depends>
+          <permissionSets>
+            <permissionSet>
+              <includes>
+                <include>**/*.sh</include>
+              </includes>
+              <fileMode>0755</fileMode>
+            </permissionSet>
+          </permissionSets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
