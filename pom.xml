@@ -3,7 +3,7 @@
 
   <groupId>com.github.gino0631</groupId>
   <artifactId>pac-root</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>PAC Project Root</name>
@@ -36,7 +36,7 @@
     <connection>scm:git:git://github.com/gino0631/pac.git</connection>
     <developerConnection>scm:git:git@github.com:gino0631/pac.git</developerConnection>
     <url>https://github.com/gino0631/pac</url>
-    <tag>pac-root-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <repository>
