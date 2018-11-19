@@ -60,7 +60,7 @@ The most important configuration parameter is `root`, which specifies the direct
 The following parameters are required, but they have reasonable default values, so it is necessary to specify them only to change the defaults:
 ```xml
 <packageName>${project.artifactId}</packageName>
-<packageVersion>${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}</packageVersion>
+<packageVersion>${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}.${project.artifact.selectedVersion.incrementalVersion}</packageVersion>
 <releaseNumber>1</releaseNumber>
 <architecture>any</architecture>
 ```

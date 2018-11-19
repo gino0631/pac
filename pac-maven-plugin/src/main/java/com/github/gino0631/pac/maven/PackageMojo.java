@@ -61,7 +61,9 @@ public class PackageMojo extends AbstractMojo {
     /**
      * The version of the package (e.g., 2.7.1). The variable is not allowed to contain colons or hyphens.
      */
-    @Parameter(defaultValue = "${project.artifact.selectedVersion.majorVersion}.${project.artifact.selectedVersion.minorVersion}", required = true)
+    @Parameter(defaultValue = "${project.artifact.selectedVersion.majorVersion}" +
+            ".${project.artifact.selectedVersion.minorVersion}" +
+            ".${project.artifact.selectedVersion.incrementalVersion}", required = true)
     private String packageVersion;
 
     /**
@@ -166,9 +168,16 @@ public class PackageMojo extends AbstractMojo {
 
             Path outputPath = target.resolve(outputFile);
             Files.createDirectories(outputPath.getParent());
+            boolean succeeded = false;
 
             try (OutputStream os = Files.newOutputStream(outputPath)) {
                 pkgBuilder.build(os);
+                succeeded = true;
+
+            } finally {
+                if (!succeeded) {
+                    Files.deleteIfExists(outputPath);
+                }
             }
 
         } catch (IOException e) {
