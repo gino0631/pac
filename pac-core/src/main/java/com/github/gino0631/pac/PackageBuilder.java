@@ -29,6 +29,7 @@ public final class PackageBuilder {
     private Map<String, String> symlinks = new HashMap<>();
     private List<String> licenses = new ArrayList<>();
     private List<String> depends = new ArrayList<>();
+    private List<String> optDepends = new ArrayList<>();
 
     @FunctionalInterface
     public interface PermissionSupplier {
@@ -114,6 +115,18 @@ public final class PackageBuilder {
         return this;
     }
 
+    public PackageBuilder addOptDepend(String nameVersion) {
+        optDepends.add(nameVersion);
+        return this;
+    }
+
+    public PackageBuilder addOptDepends(Collection<String> nameVersions) {
+        if (nameVersions != null) {
+            optDepends.addAll(nameVersions);
+        }
+        return this;
+    }
+
     public void build(OutputStream outputStream) throws IOException {
         // Validation
         Objects.requireNonNull(rootDir, "Root directory must be specified");
@@ -188,6 +201,10 @@ public final class PackageBuilder {
 
                 for (String depend : depends) {
                     writePkginfoEntry(wr, "depend", depend);
+                }
+
+                for (String optDepend : optDepends) {
+                    writePkginfoEntry(wr, "optdepend", optDepend);
                 }
             }
             PackageEntry pkginfo = new PackageEntry(".PKGINFO", pkginfoOs.toByteArray());

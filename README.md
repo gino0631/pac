@@ -76,6 +76,9 @@ Other optional parameters allow to further define the properties of the package:
 <depends>
   <depend>...</depend>
 </depends>
+<optDepends>
+  <optDepend>...</optDepend>
+</optDepends>
 ```
 
 Refer to [PKGBUILD(5)](https://www.archlinux.org/pacman/PKGBUILD.5.html#_options_and_directives) and

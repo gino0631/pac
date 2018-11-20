@@ -109,6 +109,12 @@ public class PackageMojo extends AbstractMojo {
     private List<String> depends;
 
     /**
+     * A list of optional packages that provide additional features.
+     */
+    @Parameter
+    private List<String> optDepends;
+
+    /**
      * File permissions.
      */
     @Parameter
@@ -129,7 +135,8 @@ public class PackageMojo extends AbstractMojo {
                     .setPackager(packager)
                     .setArch(architecture)
                     .addLicenses(licenses)
-                    .addDepends(depends);
+                    .addDepends(depends)
+                    .addOptDepends(optDepends);
 
             if (permissionSets != null) {
                 pkgBuilder.setPermissionSupplier((name, isDirectory) -> {

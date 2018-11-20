@@ -30,6 +30,9 @@
           <depends>
             <depend>bash</depend>
           </depends>
+          <optDepends>
+            <optDepend>gtk2: needed for gsx</optDepend>
+          </optDepends>
           <permissionSets>
             <permissionSet>
               <includes>
