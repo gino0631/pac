@@ -1,5 +1,5 @@
 # PAC
-[![Build Status](https://travis-ci.org/gino0631/pac.svg?branch=master)](https://travis-ci.org/gino0631/pac)
+[![Build Status](https://travis-ci.com/gino0631/pac.svg?branch=master)](https://travis-ci.com/gino0631/pac)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.gino0631/pac-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.gino0631/pac-maven-plugin)
 
 A pure Java implementation of tools for building Arch Linux packages.
